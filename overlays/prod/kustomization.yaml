@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: flask-test
 resources:
 - ../../base
-- ../overlays/prod
+
 
 patches:
 - path: patch.yaml
