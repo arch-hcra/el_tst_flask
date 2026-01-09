@@ -1,0 +1,20 @@
+apiVersion: kyverno.io/v1
+kind: Policy
+metadata:
+  name: policy-flask-v3
+spec:
+  validationFailureAction: audit
+  rules:
+  - name: policy-flask-v3
+    match:
+      resources:
+        kinds:
+        - Pod
+        - Deployment
+        - Service
+    validate:
+      message: "Your 'app' is not true"
+      pattern:
+        metadata:
+          labels:
+            app: "?*"

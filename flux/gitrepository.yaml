@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-flask-v3
+  namespace: flask-test
+spec:
+  url: https://github.com/arch-hcra/el_tst_flask.git
+  ref:
+    branch: main
+  interval: 1m
+  secretRef:
+    name: fleet-github-token

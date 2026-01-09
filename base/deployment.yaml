@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app-v3
+  namespace: flask-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app-v3
+  template:
+    metadata:
+      labels:
+        app: flask-app-v3
+    spec:
+      containers:
+        - name: flask
+          image: archcra/flask:v1.0
+          ports:
+            - containerPort: 5000

@@ -1,0 +1,11 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: fleet-flask-v3
+  namespace: flask-test
+spec:
+  repo: https://github.com/arch-hcra/el_tst_flask.git
+  branch: main
+  paths:
+  - ./manifests
+  clientSecretName: fleet-github-token
